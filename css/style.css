@@ -1,3 +1,128 @@
 body {
-	width: 
+	/*font-size: .7em;*/
+	font-family: 'PT Sans', sans-serif;
+	scroll-behavior: smooth;
+	background: hsl(91, 100%, 98%);
+	overflow-x: hidden;
+	height: 1200px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-flow: column wrap;
+	justify-content: space-around;
+}
+
+.flex-item {
+	align-self: center;
+	align-content: center;
+	/*background: tomato;*/
+	/*padding: 5px;*/
+	width: 100%;
+	/*opacity: .6;*/
+	/*height: 150px;*/
+	/*margin: 10px;*/
+}
+
+/***********************************************************************Header*********************************************************/
+
+header {
+	/*flex-grow: 2;*/
+	/*background: #1aff8c !important;*/
+}
+
+.logo {
+	margin: 3%;
+}
+
+.logo img {
+	max-width: 35%;
+}
+
+nav {
+	display: block;
+	background: #93c020;
+	width: 100%;
+}
+
+nav ul {
+	margin: 0;
+	list-style: none;
+	background: #93c020;
+
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-flow: row wrap;
+	justify-content: flex-end;
+}
+
+nav li {
+	padding: 15px 0 14px;
+	flex-grow: .05;
+	align-self: center;
+	align-content: center;
+	text-align: center;
+	/*background: transparent;*/
+}
+
+nav a {
+	padding: 15px;
+	text-decoration: none;
+	color: white;
+}
+
+nav li a:hover {
+	/*background: darkcyan;*/
+}
+
+@media all and (max-width: 800px) {
+	nav ul {
+		justify-content: space-around;
+	}
+}
+
+@media all and (max-width: 600px) {
+	nav ul {
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+		padding: 0;
+	}
+
+	nav ul a { 
+		text-align: center; 
+		padding: 10px;
+		border-top: 1px solid rgba(255,255,255,0.3); 
+		border-bottom: 1px solid rgba(0,0,0,0.1); 
+	}
+
+
+	nav ul li:last-of-type a {
+		border-bottom: none;
+	}
+}
+
+/**********************************************************************Content*********************************************************/
+
+.content {
+	/*flex-basis: 55%;*/
+	flex-grow: 7;
+	/*min-height: 900px;*/
+	/*background: green;*/
+}
+
+footer {
+	flex-grow: 1.3;
+	/*height: 180px;*/
+	/*flex-basis: 20%;*/
+    background: rgba(153, 194, 27, .4);
 }
