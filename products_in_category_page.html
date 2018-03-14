@@ -3,8 +3,11 @@
 <head>
 	<title>ET Energie & Handel Webshop: Gehen Sie mit uns in die Zukunft!</title>
 	<meta charset="utf-8">
+	
 	<link rel="stylesheet" type="text/css" href="css/style.css?version=0">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="marketcloud-js/dist/marketcloud.min.js"></script> -->
 </head>
 
 <body>
@@ -36,9 +39,9 @@
 			<div class="clear"></div>
 		</div>
 
-		<nav class="nav-sticky">
+		<nav>
 			<ul class="navigation">
-				<li><a href="#">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 
 				<li><a href="heizung.html">Heizung</a></li>
 
@@ -56,35 +59,62 @@
 	</header>
 
 	<div class="content flex-item">
-		<div class="shower_selection_container">
-			<div class="shower_selection_animation flex">
-				<div class="shower_selection top"></div>
-				<div class="shower_selection middle"></div>
-				<div class="shower_selection bottom"></div>
-			</div>
-			<div class="shower_selection_text">
-				<span>Pick mothafucka!asdbiasbdfaps fidhbfpaihdbpvaisdbv paisdbvpaisbdvpiasbdvi asdpiu vaipsu piaus diasdp iapisu apsu piausd vpas dvpa sdpiuvaspdnvpasdnvpasd </span>
-			</div>
-			<div class="shower_selection_button"></div>
+		<div class="text_area">
+			
 		</div>
-
 		<div class="boxes_container flex">
 			<div class="flex row">
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
 			</div>
+
 			<div class="flex row">
-				<div class="box"></div>
-				<div class="box flex_double"></div>
-				<div class="box"></div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
 			</div>
+
 			<div class="flex row">
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
+				<div class="product_box">
+					<div class="product_label">
+						<span>This is a product</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -103,9 +133,8 @@
 		$( window ).on('scroll', function(event) {
 			win_top = $(window).scrollTop();
 
-			if (win_top >= nav) {
+			if (win_top >= nav)
 				$('nav').css('position', 'fixed');
-			}
 			else
 				$('nav').css('position', 'relative');
 		});

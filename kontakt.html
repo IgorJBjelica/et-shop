@@ -3,8 +3,11 @@
 <head>
 	<title>ET Energie & Handel Webshop: Gehen Sie mit uns in die Zukunft!</title>
 	<meta charset="utf-8">
+	
 	<link rel="stylesheet" type="text/css" href="css/style.css?version=0">
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- <script src="marketcloud-js/dist/marketcloud.min.js"></script> -->
 </head>
 
 <body>
@@ -56,44 +59,24 @@
 	</header>
 
 	<div class="content flex-item">
-		<div class="shower_selection_container">
-			<div class="shower_selection_animation flex">
-				<div class="shower_selection top"></div>
-				<div class="shower_selection middle"></div>
-				<div class="shower_selection bottom"></div>
+		<div class="map_container flex">
+			<div class="locations flex">
+				<span class="location_selector" id="sweis">&nbsp;</span>
+				<span class="location_selector" id="deutchland">&nbsp;</span>
+				<span class="location_selector" id="italien">&nbsp;</span>
 			</div>
-			<div class="shower_selection_text">
-				<span>Pick mothafucka!asdbiasbdfaps fidhbfpaihdbpvaisdbv paisdbvpaisbdvpiasbdvi asdpiu vaipsu piaus diasdp iapisu apsu piausd vpas dvpa sdpiuvaspdnvpasdnvpasd </span>
-			</div>
-			<div class="shower_selection_button"></div>
-		</div>
-
-		<div class="boxes_container flex">
-			<div class="flex row">
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-			</div>
-			<div class="flex row">
-				<div class="box"></div>
-				<div class="box flex_double"></div>
-				<div class="box"></div>
-			</div>
-			<div class="flex row">
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-				<div class="box"></div>
-			</div>
+			<div class="map_canvas"></div>
 		</div>
 	</div>
 
 	<footer class="flex-item">
 
 	</footer>
-</body>
-<script type="text/javascript">
+</div>
+<!-- END CONTAINER -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
 	$(document).ready(function(){
 		$('.header_buttons_popup').hide(300);
 
@@ -117,6 +100,41 @@
 		$('.profile_button').click(function(){
 			$('.header_buttons_popup').toggle(300);
 		});
+
+		var strip = $('.strip');
+
+		strip.click(function(){
+			var i = $(this).attr('id');
+			strip.each(function(){
+				if (i == $(this).attr('id')) {
+					$(this).toggleClass('toggle_flex');
+				}
+				else {
+					if ($(this).hasClass('toggle_flex'))
+						$(this).toggleClass('toggle_flex');
+				}
+			});
+		});
+
+		// $('.location_selector').click(function(){
+		// 	$('.map_container').animate({
+		// 		backgroundColor: "#aa0000"//////////////////////////////////////////////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+		// 	}, 1000);
+		// });
+
+		function mapDisplay() {
+
+			var latval = $('input[id=lat]').val();
+			var lngval = $('input[id=lng]').val();    
+
+			var mapOptions = {
+				zoom: 8,
+				center: new google.maps.LatLng(latval, lngval),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+		};
 	});
 </script>
+</body>
 </html>

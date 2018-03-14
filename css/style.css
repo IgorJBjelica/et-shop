@@ -4,7 +4,7 @@ body {
 	scroll-behavior: smooth;
 	background: hsl(91, 100%, 98%);
 	overflow-x: hidden;
-	height: 1500px;
+	min-height: 1500px;
 	width: 100%;
 	padding: 0;
 	margin: 0;
@@ -16,6 +16,7 @@ body {
 	display: flex;
 
 	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
 	justify-content: space-around;
 }
 
@@ -43,9 +44,9 @@ body {
 
 /***********************************************************************Header*********************************************************/
 
-header {
-	/*background: #1aff8c !important;*/
-}
+/* header {
+	/*background: #1aff8c !important;/
+} */
 
 .logo {
 	width: 35%;
@@ -55,6 +56,14 @@ header {
 
 .logo img {
 	max-width: 100%;
+}
+
+nav {
+	width: 100%;
+	height: 50px;
+	top: 0px;
+
+	z-index: 9;
 }
 
 .navigation, .flex {
@@ -70,6 +79,7 @@ header {
 	display: flex;
 
 	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
 	justify-content: flex-end;
 }
 
@@ -115,13 +125,88 @@ header {
 	font-weight: 300;
 	line-height: normal;
 	position: relative;
-	display: inline-block;
+	/* display: inline-block; */
 	margin-right: 3px;
 	float: left;
 }
 
 .header_buttons_container ul.header_buttons li:last-of-type::before {
 	background-image: url('../images/shopping-cart.svg');
+}
+
+.header_buttons_popup {
+	position: absolute;
+	top: 80px;
+	right: 2.3%;
+	min-width: 28%;
+	min-height: 120px;
+
+	display: none;
+
+	background: #fafff5;
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.head_of_popup {
+	padding: 2% 2% 1% 6%;
+}
+
+.close {
+	float: right;
+	cursor: pointer;
+	color: rgba(0, 0, 0, .4);
+
+	transition: color .4s ease-in-out;
+}
+
+.close:hover {
+	color: black;
+}
+
+.line {
+	border-bottom: 1px solid rgba(0, 0, 0, .4);
+}
+
+.login {
+	margin: 6% auto;
+	width: 90%;
+}
+
+.login input {
+	width: 38%;
+	padding: 2% 5%;
+	background: transparent;
+	box-shadow: none;
+	border: 1px solid grey;
+}
+
+.login input:focus {
+	box-shadow: 0 0 2px rgb(167, 218, 37);
+	border: 1px solid rgb(167, 218, 37);
+}
+
+.login_button {
+	position: absolute;
+	top: 76.5%;
+	right: 5%;
+	width: 27%;
+	height: 20%;
+	text-align: center;
+	background: skyblue;
+}
+
+.login_button:hover {
+	cursor: pointer;
+	background-color: #87ceebd1;
+}
+
+.login_button span {
+	position: absolute;
+	top: 19%;
+	right: 33%;
+	font-size: small;
 }
 
 nav::before {
@@ -192,6 +277,7 @@ nav::before {
 	width: 60%;
 
 	-webkit-flex-flow: column wrap;
+	flex-flow: column wrap;
 	justify-content: space-around;
 }
 
@@ -240,6 +326,14 @@ nav::before {
 	background: skyblue;
 }
 
+.shower_selection_button:hover {
+	cursor: pointer;
+
+	-webkit-box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.5);
+	box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.5);
+}
+
 /********************************************************************Boxes**************************************************************/
 
 .boxes_container {
@@ -248,9 +342,10 @@ nav::before {
 	height: 600px;
 
 	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
 	justify-content: space-around;
 
-	background: lightgrey;
+	/*background: lightgrey;*/
 }
 
 .row {
@@ -293,3 +388,163 @@ footer {
 	/*flex-basis: 20%;*/
 	background: rgba(153, 194, 27, .4);
 }
+
+/************************************************************Products in Category Page***************************************************/
+
+.text_area {
+	width: 94%;
+	min-height: 200px;
+	height: auto;
+	padding: 3%;
+
+	background: lightblue;
+}
+
+.product_box {
+	border: 1px solid black;
+	flex-grow: 1;
+	margin: .1% .2%;
+
+	background: pink;
+
+	transition: all .2s ease-in-out;
+}
+
+.product_label {
+	position: relative;
+	height: 18%;
+	bottom: 0;
+	top: 78%;
+	left: 0;
+	right: 0;
+	padding-top: 2%;
+	text-align: center;
+	color: white;
+
+	background: rgba(0, 0, 0, .2);
+
+	transition: all .6s ease-in-out;
+}
+
+.product_box:hover .product_label {
+	height: 28%;
+	top: 68%;
+	background: rgba(0, 0, 0, .8);
+}
+
+/*****************************************************************Kontakt**********************************************************/
+
+.map_container {
+	padding: 1% 0;
+	min-height: 500px;
+
+	-webkit-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+}
+
+.locations {
+	flex-grow: 1;
+	min-height: 500px;
+	background-color: transparent;
+
+	-webkit-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+	justify-content: center;
+}
+
+.location_selector {
+	position: relative;
+	line-height: 35px;
+	width: 150px;
+	margin: 10px 7px;
+	padding: 5px 5px;
+	font-weight: 300;
+	font-size: 15px;
+	letter-spacing: 2px;
+	color: #383736;
+	border: 1px #383736 solid;
+	border-radius: 4px;
+	text-transform: uppercase;
+	outline: 0;
+	overflow:hidden;
+	background: none;
+	z-index: 1;
+	cursor: pointer;
+	transition:         0.08s ease-in;
+	-o-transition:      0.08s ease-in;
+	-ms-transition:     0.08s ease-in;
+	-moz-transition:    0.08s ease-in;
+	-webkit-transition: 0.08s ease-in;
+}
+
+.location_selector:after{
+	content:"";
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	text-align:center;
+	-webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.location_selector#sweis:after {
+	content: 'Sweis';
+}
+
+.location_selector#deutchland:after {
+	content: 'Deutchland';
+}
+
+.location_selector#italien:after {
+	content: 'Italien';
+}
+
+.location_selector:before {
+	content:"Finden Sie →";
+	position:absolute;
+	height:100%;
+	width:100%;
+	color:#383736;
+	left:-100%;
+	opacity: 0;
+	-webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.location_selector:hover{
+	background: rgba(56, 55, 54, .75);
+}
+
+.location_selector:hover:before{
+	left: 14%;
+	opacity:1;
+	color:#fff;
+}
+.location_selector:hover:after{
+	left:100%;
+	opacity:0;
+}
+
+/*.location_selector#sweis {
+	background-color: lightsalmon;
+	border: 1px solid rgba(238, 114, 2, .6);
+	border-right: 0;
+}
+
+.location_selector#deutchland {
+	background-color: rgba(147, 192, 31, 0.6);
+}
+
+.location_selector#italien {
+	background-color: rgba(255, 237, 0, 0.6);
+	}*/
+
+	.map_canvas {
+		flex-grow: 5;
+		min-height: 500px;
+		min-width: 78.1%;
+
+		background-color: pink;
+	}
